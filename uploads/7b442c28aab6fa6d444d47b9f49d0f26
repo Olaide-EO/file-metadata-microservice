@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\utils\external\lockfile.py", line 162, in lock
+    symlink(str(os.getpid()), self.name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\utils\external\lockfile.py", line 91, in symlink
+    os.mkdir(newlinkname)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\DELL\\.spyder-py3\\spyder.lock.1567254211204.newlink'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\utils\external\lockfile.py", line 189, in lock
+    kill(int(pid), 0)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\utils\external\lockfile.py", line 81, in kill
+    raise OSError(errno.ESRCH, None)
+ProcessLookupError: [Errno 3] None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\app\start.py", line 157, in main
+    lock_created = lock.lock()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\utils\external\lockfile.py", line 212, in lock
+    rmlink(self.name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\utils\external\lockfile.py", line 119, in rmlink
+    os.remove(os.path.join(filename, 'symlink'))
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\DELL\\.spyder-py3\\spyder.lock\\symlink'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 3285, in main
+    mainwindow = run_spyder(app, options, args)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 3140, in run_spyder
+    main.setup()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 813, in setup
+    message=_("Spyder Internal Console\n\n"
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\plugins\console.py", line 67, in __init__
+    light_background=light_background)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\widgets\internalshell.py", line 142, in __init__
+    profile)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\widgets\shell.py", line 636, in __init__
+    initial_message)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\widgets\shell.py", line 70, in __init__
+    self.history = self.load_history()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\spyder\widgets\shell.py", line 495, in load_history
+    if rawhistory[1] != self.INITHISTORY[1]:
+IndexError: list index out of range
